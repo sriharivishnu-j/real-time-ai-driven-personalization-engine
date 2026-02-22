@@ -1,23 +1,17 @@
 from fastapi import FastAPI, HTTPException
 import logging
-from langchain import LangChain
-from openai import OpenAI
-from pinecone import Pinecone
 
 app = FastAPI()
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 
-@app.on_event("startup")
-async def startup_event():
-    logger.info("Starting up the FastAPI application")
-    # Initialize LangChain and Pinecone here
-
-@app.get("/personalize")
-async def personalize(user_id: int):
+@app.get("/api/personalize")
+async def personalize(user_id: str):
     try:
-        # Placeholder for AI-driven personalization logic
-        return {"message": "Personalization successful"}
+        # Simulate a call to an AI model
+        logging.info(f"Personalizing content for user_id: {user_id}")
+        # Here, integrate with LangChain, OpenAI, etc.
+        return {"message": "Personalized content for user", "user_id": user_id}
     except Exception as e:
-        logger.error(f"Error in personalization: {e}")
-        raise HTTPException(status_code=500, detail="Personalization failed")
+        logging.error(f"Error personalizing content: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
