@@ -1,0 +1,4 @@
+fastapi==0.109
+uvicorn
+openai
+pydantic
