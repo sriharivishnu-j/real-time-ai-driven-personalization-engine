@@ -1,17 +1,15 @@
-# Backend - FastAPI
+# Real-Time AI-Driven Personalization Engine Backend
 
-## Setup
+Backend services using FastAPI for AI model serving.
 
-Install dependencies:
+## Running the Service
 
-```bash
-pip install -r requirements.txt
-```
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Run
-
-Start the FastAPI application:
-
-```bash
-uvicorn main:app --reload
-```
+2. Start the FastAPI server:
+   ```bash
+   uvicorn main:app --reload
+   ```
