@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-personalization-engine
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-personalization-engine
+  template:
+    metadata:
+      labels:
+        app: ai-personalization-engine
+    spec:
+      containers:
+      - name: backend
+        image: myregistry/ai-personalization-engine:latest
+        ports:
+        - containerPort: 8000
+      - name: frontend
+        image: myregistry/ai-front-end:latest
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
