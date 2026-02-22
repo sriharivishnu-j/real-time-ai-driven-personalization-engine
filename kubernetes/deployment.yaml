@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-personalization-engine
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-personalization-engine
+  template:
+    metadata:
+      labels:
+        app: ai-personalization-engine
+    spec:
+      containers:
+      - name: backend
+        image: myrepo/ai-personalization-backend:latest
+        ports:
+        - containerPort: 80
+      - name: frontend
+        image: myrepo/ai-personalization-frontend:latest
+        ports:
+        - containerPort: 3000
