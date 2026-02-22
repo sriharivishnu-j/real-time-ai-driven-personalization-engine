@@ -1,9 +1,21 @@
-# Real-Time AI-Driven Personalization Engine
+# Real-Time AI-Driven Personalization Engine Frontend
 
-This is the frontend of the Real-Time AI-Driven Personalization Engine built with Next.js 14 and Tailwind CSS.
+This is the Next.js 14 frontend for the Real-Time AI-Driven Personalization Engine using Tailwind CSS and TypeScript.
 
 ## Getting Started
 
-1. Install dependencies: `npm install`
-2. Run the development server: `npm run dev`
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+First, run the development server:
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Build
+
+To build the application, run:
+
+```bash
+npm run build
+```
