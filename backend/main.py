@@ -1,20 +1,18 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import logging
 
 app = FastAPI()
 
+# Configure logging
 logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-class PersonalizationRequest(BaseModel):
-    user_id: str
-
-@app.post("/personalization")
-async def get_personalization(request: PersonalizationRequest):
+@app.get("/personalize")
+async def personalize(user_id: int):
     try:
-        # Assume some AI processing logic here
-        personalized_content = f"Hello, {request.user_id}! This is your personalized content."
-        return {"content": personalized_content}
+        logger.info(f"Received personalization request for user {user_id}")
+        # Placeholder for personalization logic
+        return {"message": "Personalization successful", "user_id": user_id}
     except Exception as e:
-        logging.error(f"Error processing personalization: {e}")
+        logger.error(f"Error in personalization: {e}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
