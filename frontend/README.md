@@ -1,10 +1,8 @@
-# Real-Time AI-Driven Personalization Engine
+# Real-Time AI-Driven Personalization Engine Frontend
 
-## Frontend
+This is the frontend of the Real-Time AI-Driven Personalization Engine.
 
-This is a Next.js 14 application using TypeScript and Tailwind CSS for styling.
-
-### Development
+## Getting Started
 
 Run the development server:
 
@@ -12,18 +10,14 @@ Run the development server:
 npm run dev
 ```
 
-### Build
-
-Build the application for production:
+Build for production:
 
 ```bash
 npm run build
 ```
 
-### Start
-
-Run the production build:
+Start the production server:
 
 ```bash
-npm run start
+npm start
 ```
