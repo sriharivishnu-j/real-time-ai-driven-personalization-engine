@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-personalization-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ai-personalization-backend
+  template:
+    metadata:
+      labels:
+        app: ai-personalization-backend
+    spec:
+      containers:
+      - name: backend
+        image: myrepo/ai-personalization-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          value: "production"
