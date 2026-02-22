@@ -3,16 +3,15 @@ import logging
 
 app = FastAPI()
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("uvicorn")
 
 @app.get("/personalize")
 async def personalize(user_id: int):
     try:
-        logger.info(f"Received personalization request for user {user_id}")
-        # Placeholder for personalization logic
-        return {"message": "Personalization successful", "user_id": user_id}
+        # Simulate AI-driven personalization logic
+        logger.info(f"Fetching personalization for user {user_id}")
+        personalized_data = {"user_id": user_id, "recommendations": ["item1", "item2"]}
+        return personalized_data
     except Exception as e:
-        logger.error(f"Error in personalization: {e}")
+        logger.error(f"Error in personalization: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
