@@ -1,13 +1,1 @@
-# Real-Time AI-Driven Personalization Engine Backend
-
-This is the FastAPI-based backend service for serving AI models and orchestrating requests.
-
-## Run the Server
-
-To run the server, use:
-
-```bash
-uvicorn main:app --reload
-```
-
-The server should be running on [http://localhost:8000](http://localhost:8000).
+# Real-Time AI-Driven Personalization Engine Backend\n\nThis is the backend component of the Real-Time AI-Driven Personalization Engine. Built with FastAPI and integrates AI models.\n\n## Development\n\nRun the app:\n\n```bash\nuvicorn app.main:app --reload\n```\n
