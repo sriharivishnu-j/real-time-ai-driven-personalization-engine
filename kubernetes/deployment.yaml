@@ -1,23 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ai-personalization-engine
+  name: ai-personalization-backend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ai-personalization-engine
+      app: ai-personalization-backend
   template:
     metadata:
       labels:
-        app: ai-personalization-engine
+        app: ai-personalization-backend
     spec:
       containers:
       - name: backend
         image: myrepo/ai-personalization-backend:latest
         ports:
-        - containerPort: 80
-      - name: frontend
-        image: myrepo/ai-personalization-frontend:latest
-        ports:
-        - containerPort: 3000
+        - containerPort: 8000
+        env:
+        - name: DATABASE_URL
+          value: "postgresql://user:password@postgres:5432/db"
+        - name: REDIS_URL
+          value: "redis://redis:6379/0"
+        - name: KAFKA_BROKER
+          value: "kafka:9092"
