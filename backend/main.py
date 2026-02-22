@@ -1,17 +1,14 @@
 from fastapi import FastAPI, HTTPException
-import logging
+from loguru import logger
 
 app = FastAPI()
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-@app.get("/ai-model")
-async def get_ai_model():
+@app.get("/personalize")
+async def personalize(user_id: int):
     try:
-        # Placeholder for AI model inference code
-        logger.info("Fetching AI model results...")
-        return {"message": "AI model result"}
+        # Placeholder for personalization logic
+        logger.info(f"Personalizing content for user {user_id}")
+        return {"message": "Personalization successful"}
     except Exception as e:
-        logger.error(f"Error fetching AI model: {str(e)}")
+        logger.error(f"Error personalizing content: {e}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
