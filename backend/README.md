@@ -1,8 +1,16 @@
-# Real-Time AI-Driven Personalization Engine Backend
+# Backend - FastAPI
 
-This is the backend service using FastAPI for AI-driven personalization logic.
+## Setup
 
-## Running the server
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run
+
+Start the FastAPI application:
 
 ```bash
 uvicorn main:app --reload
