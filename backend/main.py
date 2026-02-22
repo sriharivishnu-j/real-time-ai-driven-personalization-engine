@@ -3,15 +3,15 @@ import logging
 
 app = FastAPI()
 
-logger = logging.getLogger("uvicorn")
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-@app.get("/personalize")
-async def personalize(user_id: int):
+@app.get("/ai-model")
+async def get_ai_model():
     try:
-        # Simulate AI-driven personalization logic
-        logger.info(f"Fetching personalization for user {user_id}")
-        personalized_data = {"user_id": user_id, "recommendations": ["item1", "item2"]}
-        return personalized_data
+        # Placeholder for AI model inference code
+        logger.info("Fetching AI model results...")
+        return {"message": "AI model result"}
     except Exception as e:
-        logger.error(f"Error in personalization: {str(e)}")
+        logger.error(f"Error fetching AI model: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal Server Error")
