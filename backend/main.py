@@ -1,22 +1,23 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
 import logging
-
-logging.basicConfig(level=logging.INFO)
+from langchain import LangChain
+from openai import OpenAI
+from pinecone import Pinecone
 
 app = FastAPI()
 
-class RequestData(BaseModel):
-    user_id: str
-    event_data: dict
+logger = logging.getLogger(__name__)
 
-@app.post("/process-event")
-async def process_event(data: RequestData):
+@app.on_event("startup")
+async def startup_event():
+    logger.info("Starting up the FastAPI application")
+    # Initialize LangChain and Pinecone here
+
+@app.get("/personalize")
+async def personalize(user_id: int):
     try:
-        logging.info(f"Processing event for user {data.user_id}")
-        # Simulate AI processing, interaction with LangChain and OpenAI
-        # Placeholder for actual processing logic
-        return {"message": "Event processed successfully"}
+        # Placeholder for AI-driven personalization logic
+        return {"message": "Personalization successful"}
     except Exception as e:
-        logging.error(f"Error processing event: {str(e)}")
-        raise HTTPException(status_code=500, detail="Internal Server Error")
+        logger.error(f"Error in personalization: {e}")
+        raise HTTPException(status_code=500, detail="Personalization failed")
