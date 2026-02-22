@@ -1,15 +1,1 @@
-# Infrastructure Setup
-
-This directory contains Terraform scripts to provision AWS EKS cluster.
-
-## Commands
-
-1. Initialize Terraform:
-   ```bash
-   terraform init
-   ```
-
-2. Apply configurations:
-   ```bash
-   terraform apply
-   ```
+# Infrastructure\n\nThis directory contains configurations for Docker and Kubernetes deployment.\n\n## Dockerfile\n\nThe Dockerfile is used to build the backend service.\n\n## Kubernetes\n\nTo deploy to EKS, use the provided Kubernetes manifests (not included in this skeleton).\n
