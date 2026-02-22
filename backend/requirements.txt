@@ -1,4 +1,7 @@
-fastapi==0.109
-uvicorn
+fastapi==0.109.0
+uvicorn==0.15.0
+LangChain==0.1.0
 openai
-pydantic
+psycopg2
+redis
+pinecone-client
