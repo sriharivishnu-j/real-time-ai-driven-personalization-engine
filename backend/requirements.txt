@@ -1,7 +1,5 @@
-fastapi==0.109.0
-uvicorn==0.15.0
-LangChain==0.1.0
+fastapi==0.109
+langchain==0.1
 openai
-psycopg2
-redis
 pinecone-client
+uvicorn
