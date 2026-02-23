@@ -1,13 +1,22 @@
 # Real-Time AI-Driven Personalization Engine
 
-This project is a scalable, AI-driven personalization engine using Next.js, FastAPI, and more.
+This project is a Next.js 14 application for the frontend of a real-time AI-driven personalization engine.
 
-## Frontend
+## Setup
 
-Built with Next.js 14 and Tailwind CSS for responsive design. TypeScript is used for type safety.
+```bash
+npm install
+```
 
-## Scripts
+## Development
 
-- `npm run dev`: Starts the development server.
-- `npm run build`: Builds the application for production.
-- `npm run start`: Starts the application in production mode.
+```bash
+npm run dev
+```
+
+## Production
+
+```bash
+npm run build
+npm start
+```
