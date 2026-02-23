@@ -1,6 +1,4 @@
-fastapi==0.109
-pydantic==2.0
-langchain==0.1
-openai
-pinecone-client
-uvicorn[standard]==0.17.0
+fastapi==0.109.0
+uvicorn[standard]==0.18.3
+
+# Additional dependencies can be added here
