@@ -1,24 +1,19 @@
-import React from 'react';
-import { useQuery } from 'react-query';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const fetchPersonalizationData = async () => {
-  const response = await fetch('/api/personalization');
-  if (!response.ok) throw new Error('Network response was not ok');
-  return response.json();
-};
-
-const HomePage: React.FC = () => {
-  const { data, error, isLoading } = useQuery('personalizationData', fetchPersonalizationData);
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
-
+const Home: NextPage = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold">Personalization Engine</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div className="container mx-auto">
+      <Head>
+        <title>AI Personalization Engine</title>
+      </Head>
+      <main>
+        <h1 className="text-3xl font-bold">
+          Welcome to the AI-Driven Personalization Engine
+        </h1>
+      </main>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
